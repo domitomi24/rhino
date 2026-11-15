@@ -1,2 +1,3 @@
 [build]
-  publish = "."
+  command = "mkdir -p dist && cp *.html *.css *.js *.webp *.png vehicles-performance.json dist/"
+  publish = "dist"
