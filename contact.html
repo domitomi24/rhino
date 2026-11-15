@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Rhino ECU Tuning</title>
+  <link rel="icon" href="/rhino-icon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css?v=20">
+</head>
+<body>
+<header>
+  <div class="shell bar">
+    <a class="brand" href="/" aria-label="Rhino ECU Tuning · Home">
+      <img src="/rhino-logo.webp" alt="" width="44" height="38">
+      <span class="brand-name">RHINO <span>ECU TUNING</span></span>
+    </a>
+    <a href="/">Terug naar home</a>
+  </div>
+</header>
+<main class="shell section intake">
+  <div>
+    <h1 style="font-size:clamp(3rem,8vw,6rem)">CONTACT</h1>
+    <p>Heb je een vraag over tuning, diagnose of jouw auto? Stuur ons een bericht.</p>
+  </div>
+  <form name="rhino-contact" method="POST" action="/contact-bedankt.html" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="rhino-contact">
+    <p hidden><label>Laat dit leeg<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <label>Naam<input name="naam" autocomplete="name" maxlength="100" required></label>
+    <label>E-mailadres<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+    <label>Bericht<textarea name="bericht" rows="6" maxlength="3000" required></textarea></label>
+    <button class="button" type="submit">Verstuur bericht →</button>
+  </form>
+</main>
+</body>
+</html>

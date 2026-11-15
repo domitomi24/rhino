@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Rhino ECU Tuning. ECU-remapping, transmissiesoftware en performance-upgrades."><title>Rhino ECU Tuning — Auto &amp; performance</title>
+<link rel="icon" href="rhino-icon.png" type="image/png">
+<link rel="stylesheet" href="style.css?v=20">
+</head>
+<body>
+<header><div class="shell bar"><a class="brand" href="#" aria-label="Rhino ECU Tuning · Home"><img src="rhino-logo.webp" alt="" width="44" height="38"><span class="brand-name">RHINO <span>ECU TUNING</span></span></a><button class="menu" aria-expanded="false" aria-controls="nav">Menu</button><nav id="nav"><a href="#services">Diensten</a><a href="#werkwijze">Werkwijze</a><a href="#vragen">FAQ</a></nav><a class="button top" href="#intake">Kies je auto →</a></div></header>
+<main>
+<section class="hero"><div class="rhino-wall-glow" aria-hidden="true"></div><div class="dyno-smoke" aria-hidden="true"></div><div class="shell hero-content"><div class="eyebrow"><b></b> ECU-TUNING / PERFORMANCE</div><h1>MEER KRACHT.<br><em>MEER KOPPEL.</em></h1><p>ECU-vermogensremaps voor circuitgebruik. Diagnose en ECU-uitlezing ook voor straatauto’s.</p><div class="actions"><a class="button" href="#intake">Kies je auto →</a><a class="button ghost" href="#services">Bekijk de diensten ↓</a></div></div></section>
+<div class="strip"><div class="shell"><span>ECU REMAPPING</span><i></i><span>TCU SOFTWARE</span><i></i><span>PERFORMANCE HARDWARE</span><i></i><span>DIAGNOSE & DATA</span></div></div>
+<section class="shell section" id="services"><div class="eyebrow"><b></b> DE WERKPLAATS</div><h2>ONZE DIENSTEN<span>.</span></h2><div class="cards">
+<article><div class="icon" aria-hidden="true">⌁</div><h3>ECU-tuning</h3><p>Stage 1 en Stage 2 voor circuitgebruik. Een vermogensremap gebruiken op de Belgische openbare weg vereist een geldige goedkeuring voor die wijziging.</p><p><strong class="service-price">Stage 1 · €345</strong></p><button data-service="ECU-tuning">Kies ECU-tuning <span>→</span></button></article>
+<article><div class="icon" aria-hidden="true">⇄</div><h3>TCU-software</h3><p>Afstelling van schakelgedrag en koppellimieten voor ondersteunde automatische transmissies.</p><button data-service="TCU-software">Kies TCU-software <span>→</span></button></article>
+<article><div class="icon" aria-hidden="true">⛭</div><h3>Performance upgrades</h3><p>Bespreek welke aanpassingen aan inlaat, koeling of onderstel passen bij jouw setup.</p><button data-service="Performance upgrades">Kies hardware <span>→</span></button></article>
+<article><div class="icon" aria-hidden="true">⌗</div><h3>Diagnose & logging</h3><p>Foutcodes uitlezen en live data controleren. Ook beschikbaar voor straatauto’s.</p><button data-service="Diagnose & logging">Kies diagnose <span>→</span></button></article>
+</div></section>
+<section class="process" id="werkwijze"><div class="shell section"><div class="eyebrow"><b></b> WERKWIJZE</div><h2>VAN CHECK TOT AFSTELLING<span>.</span></h2><ol><li><strong>Voertuigcheck</strong><p>Motor, versnellingsbak, onderhoud en bestaande modificaties bepalen de mogelijkheden.</p></li><li><strong>Afstellen</strong><p>De software wordt afgestemd op de gekozen setup, met aandacht voor de grenzen van motor en transmissie.</p></li><li><strong>Controleren</strong><p>Relevante meetwaarden en rijgedrag worden na de afstelling gecontroleerd.</p></li></ol></div></section>
+<section class="shell section intake" id="intake"><div><div class="eyebrow"><b></b> VOERTUIGINTAKE</div><h2>JOUW AUTO.<br>JOUW SETUP<span>.</span></h2><p>Maak een intake met je voertuiggegevens en gewenste upgrade. Daarna kun je de samenvatting downloaden en zelf doorsturen.</p></div>
+<form id="vehicle">
+<fieldset id="catalog-picker" disabled><legend>Kies je auto</legend><div class="fields">
+<label>Merk<select id="catalog-brand" name="merk" required><option value="">Lijst laden…</option></select></label>
+<label>Model<select id="catalog-model" name="model" required disabled><option value="">Kies eerst een merk</option></select></label>
+<label>Bouwjaar<select id="catalog-year" name="jaar" required disabled><option value="">Kies eerst een model</option></select></label>
+<label>Motorvariant<select id="catalog-engine" name="motor" required disabled><option value="">Kies eerst een bouwjaar</option></select></label>
+</div><p id="catalog-match" class="catalog-match" role="status" hidden></p>
+<section id="performance" class="performance" aria-labelledby="performance-title" hidden>
+  <h3 id="performance-title">Vermogen &amp; koppel</h3>
+  <p>De originele waarden komen uit de Alientech-lijsten. Vul gemeten Stage 1-waarden in om het verschil te berekenen.</p>
+  <table>
+    <thead><tr><th scope="col">Waarde</th><th scope="col">Origineel</th><th scope="col">Stage 1</th><th scope="col">Verschil</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Vermogen</th><td id="stock-pk">—</td><td><input id="tuned-pk" type="text" inputmode="decimal" maxlength="8" aria-label="Gemeten Stage 1-vermogen in pk" placeholder="pk"></td><td id="gain-pk">—</td></tr>
+      <tr><th scope="row">Koppel</th><td id="stock-nm">—</td><td><input id="tuned-nm" type="text" inputmode="decimal" maxlength="8" aria-label="Gemeten Stage 1-koppel in Nm" placeholder="Nm"></td><td id="gain-nm">—</td></tr>
+    </tbody>
+  </table>
+  <span class="performance-status" role="status" id="performance-status"></span>
+</section></fieldset>
+<fieldset id="manual-picker" hidden disabled><legend>Vul je auto handmatig in</legend><div class="fields">
+<label>Merk<input name="merk" placeholder="Bijv. BMW" required maxlength="60"></label><label>Model<input name="model" placeholder="Bijv. 330d" required maxlength="60"></label><label>Bouwjaar<input name="jaar" type="number" min="1950" max="2100" placeholder="Bijv. 2020" required></label><label>Motor / vermogen<input name="motor" placeholder="Bijv. 3.0 diesel, 265 pk" required maxlength="90"></label>
+</div></fieldset>
+<button type="button" id="vehicle-mode" class="text-button">Mijn auto staat er niet bij</button>
+<p id="catalog-error" role="status" hidden>De voertuiglijst kon niet laden. Je kunt je auto handmatig invullen.</p>
+<label>Gewenste dienst<select name="dienst"><option value="ECU-tuning">ECU-tuning (circuitgebruik)</option><option>TCU-software</option><option>Performance upgrades</option><option>Diagnose &amp; logging</option></select></label><label>Huidige modificaties of rijdoel <small>(optioneel)</small><textarea name="extra" rows="3" maxlength="800" placeholder="Bijv. aangepast inlaatsysteem of een motorstoring"></textarea></label><button class="button" type="submit">Download mijn intake ↓</button><p class="status" role="status"></p></form></section>
+<section class="process" id="vragen"><div class="shell section faq"><div><div class="eyebrow"><b></b> FAQ</div><h2>VEELGESTELDE<br>VRAGEN<span>.</span></h2></div><div><details><summary>Mag ik met een Stage 1- of Stage 2-remap de openbare weg op?</summary><p>Voor gebruik op de Belgische openbare weg is een geldige goedkeuring voor die vermogenswijziging vereist. Onze vermogensremaps zijn bedoeld voor circuitgebruik. Voor diagnose en ECU-uitlezing kun je ook met een straatauto bij ons terecht.</p></details><details><summary>Wat is het verschil tussen Stage 1 en Stage 2?</summary><p>Stage 1 gebruikt doorgaans de bestaande hardware. Bij Stage 2 wordt de afstelling afgestemd op aangepaste hardware. Welke onderdelen nodig zijn, hangt af van de motor en het doel.</p></details><details><summary>Hoeveel pk en Nm kan mijn auto winnen?</summary><p>Dat hangt af van de exacte motorvariant, de software, de mechanische staat en de huidige setup. Vul je voertuiggegevens in om je mogelijkheden gericht te bespreken.</p></details><details><summary>Heeft elke auto transmissiesoftware nodig?</summary><p>Dat hangt af van het type versnellingsbak, het gewenste koppel en de ondersteuning voor die specifieke transmissie.</p></details></div></div></section>
+</main><footer><div class="shell bar"><a class="brand" href="#"><img src="rhino-logo.webp" alt="" width="44" height="38"><span class="brand-name">RHINO <span>ECU TUNING</span></span></a><div class="footer-links"><a href="https://wa.me/32471950156">WhatsApp</a><button type="button" id="cookie-reopen" aria-controls="cookie-notice" hidden>Cookie-informatie</button><a href="#">Terug naar boven ↑</a></div></div><div class="shell footer-credit"><a href="https://flexisoftstudio.be">Made by flexisoftstudio.be</a></div></footer>
+<section class="cookie-notice" id="cookie-notice" aria-labelledby="cookie-title" hidden>
+  <img src="rhino-logo.webp" alt="" width="56" height="44">
+  <div class="cookie-copy">
+    <h2 id="cookie-title" tabindex="-1">Cookies &amp; privacy</h2>
+    <p>Rhino ECU Tuning gebruikt geen analyse- of advertentiecookies op deze pagina.</p>
+    <details>
+      <summary>Wat wordt er opgeslagen?</summary>
+      <p>Je browser onthoudt lokaal dat je deze melding hebt gesloten. Voor de lettertypes maakt de pagina verbinding met Google Fonts. Bij het inloggen op de afgeschermde site kan ChatGPT cookies gebruiken voor de aanmeldsessie.</p>
+    </details>
+  </div>
+  <button type="button" class="button" id="cookie-dismiss">Begrepen</button>
+</section>
+<a class="whatsapp-button" href="https://wa.me/32471950156" aria-label="Chat met Rhino ECU Tuning via WhatsApp">
+  <svg width="25" height="25" viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="currentColor">
+    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.99 0C3.62 0 .063 3.556.063 7.926c0 1.397.365 2.762 1.058 3.965L0 16l4.204-1.103a7.935 7.935 0 0 0 3.786.964h.004c4.368 0 7.925-3.556 7.927-7.926a7.898 7.898 0 0 0-2.32-5.609zM7.994 14.52a6.57 6.57 0 0 1-3.349-.916l-.24-.143-2.495.655.666-2.433-.157-.25a6.56 6.56 0 0 1-1.007-3.507c0-3.63 2.95-6.58 6.584-6.58a6.54 6.54 0 0 1 4.654 1.93 6.548 6.548 0 0 1 1.927 4.658c-.002 3.631-2.954 6.586-6.583 6.586z"/>
+    <path d="M11.602 9.566c-.197-.1-1.17-.578-1.351-.645-.182-.066-.314-.099-.446.1-.132.198-.51.644-.625.776-.115.133-.23.15-.427.05-.198-.1-.835-.308-1.588-.98-.587-.523-.984-1.17-1.1-1.368-.115-.198-.012-.306.087-.405.088-.088.198-.23.297-.346.1-.115.132-.198.198-.33.066-.133.033-.249-.016-.348-.05-.099-.445-1.073-.61-1.469-.16-.386-.323-.334-.445-.34l-.38-.007a.727.727 0 0 0-.528.248c-.181.198-.692.677-.692 1.65 0 .974.709 1.915.808 2.047.099.133 1.395 2.132 3.38 2.988.472.204.84.326 1.128.417.474.15.906.129 1.248.078.38-.057 1.17-.479 1.335-.941.165-.462.165-.858.115-.941-.05-.083-.18-.132-.378-.231z"/>
+  </svg>
+  <span>WhatsApp</span>
+</a>
+<script src="site.js?v=5" defer></script></body></html>
